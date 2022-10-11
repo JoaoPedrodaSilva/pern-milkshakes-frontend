@@ -1,9 +1,13 @@
 import { useEffect } from "react"
 
-export const Filter = ({ selectedFlavor, setSelectedFlavor, allMilkshakes, setAllMilkshakes }) => {    
+export const Filter = ({ allMilkshakes, selectedFlavor, setSelectedFlavor, setFilteredMilkshakes }) => {
 
     useEffect(() => {
-        setAllMilkshakes(allMilkshakes && allMilkshakes.filter(milkshake => milkshake.flavor.includes(selectedFlavor)))
+        if (selectedFlavor === "All") {
+            setFilteredMilkshakes(allMilkshakes)
+        } else {
+            setFilteredMilkshakes(allMilkshakes && allMilkshakes.filter(milkshake => milkshake.flavor.includes(selectedFlavor)))
+        }
     }, [selectedFlavor])
 
     return (

@@ -14,6 +14,7 @@ export const HomePage = () => {
             try {
                 const response = await axios.get('/api/')
                 setAllMilkshakes(response.data.milkshakes)
+                setFilteredMilkshakes(response.data.milkshakes)
             } catch (error) {
                 console.log(error)
             }
@@ -25,17 +26,15 @@ export const HomePage = () => {
         <main className="w-full h-full flex flex-col justify-center items-center gap-1 px-2">
 
             <Filter
+                allMilkshakes={allMilkshakes}
                 selectedFlavor={selectedFlavor}
                 setSelectedFlavor={setSelectedFlavor}
-                allMilkshakes={allMilkshakes}
-                setAllMilkshakes={setAllMilkshakes}
-            />
-
-            {/* {console.log(allMilkshakes)} */}
+                setFilteredMilkshakes={setFilteredMilkshakes}              
+            />            
 
             {/* render a card for each milkshake */}
             <section className="w-full basis-10/12 h-1/3 grid grid-cols-1 gap-1 overflow-scroll scroll-smooth">
-                {allMilkshakes && allMilkshakes.map(milkshake => (
+                {filteredMilkshakes && filteredMilkshakes.map(milkshake => (
                     <MilkshakeCard key={milkshake.id} milkshake={milkshake} />
                 ))}
             </section>
