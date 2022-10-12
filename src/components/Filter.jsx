@@ -11,11 +11,11 @@ export const Filter = ({ allMilkshakes, selectedFlavor, setSelectedFlavor, setFi
     }, [selectedFlavor])
 
     return (
-        <form className="w-full flex justify-center gap-3">
+        <form className="w-full flex justify-between gap-3">
             <label htmlFor="filter">Select your flavor?</label>
             <select
                 id="filter"
-                className="w-1/2 pl-1 rounded"
+                className="w-1/2 xs:w-3/5 pl-1 rounded"
                 onChange={
                     event => setSelectedFlavor(event.target.value)
                 }

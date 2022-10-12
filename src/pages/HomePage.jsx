@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import { MilkshakeCard } from "../components/MilkshakeCard"
 import { Filter } from "../components/Filter"
 
+
 export const HomePage = () => {
     const [allMilkshakes, setAllMilkshakes] = useState(null)
     const [filteredMilkshakes, setFilteredMilkshakes] = useState(null)
@@ -23,22 +24,21 @@ export const HomePage = () => {
     }, [])
 
     return (
-        <main className="w-full h-full flex flex-col justify-center items-center gap-1 px-2">
-
+        <main className="w-full h-full flex flex-col justify-center items-center gap-2 px-2">
             <Filter
                 allMilkshakes={allMilkshakes}
                 selectedFlavor={selectedFlavor}
                 setSelectedFlavor={setSelectedFlavor}
-                setFilteredMilkshakes={setFilteredMilkshakes}              
-            />            
+                setFilteredMilkshakes={setFilteredMilkshakes}
+            />
+
 
             {/* render a card for each milkshake */}
-            <section className="w-full basis-10/12 h-1/3 grid grid-cols-1 gap-1 overflow-scroll scroll-smooth">
+            <section className="w-full h-60 flex flex-col gap-1 overflow-scroll">
                 {filteredMilkshakes && filteredMilkshakes.map(milkshake => (
                     <MilkshakeCard key={milkshake.id} milkshake={milkshake} />
                 ))}
             </section>
         </main>
-
     )
 }
