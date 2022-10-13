@@ -6,6 +6,11 @@ module.exports = {
     theme: {
         screens: {
             'xs': '400px'
+        },
+        fontFamily: {
+            'concert': ['Concert One', 'cursive'],
+            'poppins': ['Poppins', 'sans-serif'],
+            'titillium': ['Titillium Web', 'sans-serif']
         }
     },
     plugins: [],

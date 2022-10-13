@@ -24,7 +24,7 @@ export const HomePage = () => {
     }, [])
 
     return (
-        <main className="w-full h-full flex flex-col justify-center items-center gap-2 px-2">
+        <main className="w-full h-full flex flex-col justify-around items-center p-2">
             <Filter
                 allMilkshakes={allMilkshakes}
                 selectedFlavor={selectedFlavor}
@@ -34,7 +34,7 @@ export const HomePage = () => {
 
 
             {/* render a card for each milkshake */}
-            <section className="w-full h-60 flex flex-col gap-1 overflow-scroll">
+            <section className="w-full h-full flex flex-col gap-1 overflow-auto overflow-x-hidden">
                 {filteredMilkshakes && filteredMilkshakes.map(milkshake => (
                     <MilkshakeCard key={milkshake.id} milkshake={milkshake} />
                 ))}

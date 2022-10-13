@@ -11,7 +11,7 @@ export const Filter = ({ allMilkshakes, selectedFlavor, setSelectedFlavor, setFi
     }, [selectedFlavor])
 
     return (
-        <form className="w-full flex justify-between gap-3">
+        <form className="w-full flex justify-between gap-1 pb-2">
             <label htmlFor="filter">Select your flavor?</label>
             <select
                 id="filter"

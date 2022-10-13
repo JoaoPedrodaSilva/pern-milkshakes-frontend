@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 
 export const MilkshakeCard = ({ milkshake }) => (
-    <article className="w-full grid grid-cols-2 gap-x-1 gap-y-2 text-sm xs:text-lg rounded-lg shadow border border-white px-3 py-1 bg-orange-200">
-        <h2 className="font-bold cols-1">{milkshake.title}</h2>
+    <article className="w-full min-h-[40%] grid grid-cols-2 gap-x-1 gap-y-2 text-sm xs:text-lg rounded-lg shadow border-2 border-white px-3 py-1 bg-orange-200">
+        {/* <h1>HELLO</h1> */}
+        <h2 className="font-bold">{milkshake.title}</h2>
         <p className="font-bold">Flavor: {milkshake.flavor}</p>
         <img
             src={milkshake.image_url}

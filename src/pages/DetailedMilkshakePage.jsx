@@ -21,8 +21,8 @@ export const DetailedMilkshakePage = () => {
     return (
         <>
             {selectedMilkshake && (
-                <section className="w-full flex flex-col justify-center items-center gap-3 px-4">
-                    <header className="flex flex-col xs:text-lg justify-center items-center">
+                <section className="w-full h-full flex flex-col justify-center items-center px-4 bg-orange-200">
+                    <header className="flex flex-col text-sm xs:text-lg justify-center items-center py-1">
                         <h1 className="font-bold">{selectedMilkshake.title}</h1>
                         <h2 className="font-bold">Flavor: {selectedMilkshake.flavor}</h2>
                     </header>
@@ -31,7 +31,7 @@ export const DetailedMilkshakePage = () => {
                         alt=""
                         className="w-1/2 rounded-lg border-2 border-orange-400"
                     />
-                    <p className="text-xs xs:text-sm xs:rg-red-300 text-justify">{selectedMilkshake.long_description}</p>
+                    <p className="text-xs xs:text-sm text-justify py-2">{selectedMilkshake.long_description}</p>
                     <Link to="/" className="text-center text-xs xs:text-sm bg-orange-400 rounded px-2 py-1">Back to Milkshakes</Link>
                 </section>
             )}
