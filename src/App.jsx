@@ -6,7 +6,7 @@ import { DetailedMilkshakePage } from "./pages/DetailedMilkshakePage"
 
 export const App = () => (
     <BrowserRouter>
-        <div className="w-screen max-w-[475px] h-screen max-h-[475px] mx-auto flex flex-col justify-center items-center font-concert bg-orange-300">
+        <div className="w-screen max-w-[475px] h-screen max-h-[475px] mx-auto flex flex-col font-poppins bg-orange-300 overflow-hidden">
             <Navbar />
             <Routes>
                 <Route path='/' element={<HomePage />} />
