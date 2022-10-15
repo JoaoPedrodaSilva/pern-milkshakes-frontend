@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { Navbar } from "./components/Navbar"
 import { HomePage } from "./pages/HomePage"
 import { DetailedMilkshakePage } from "./pages/DetailedMilkshakePage"
+import { ReviewsPage } from "./pages/ReviewsPage"
 
 
 export const App = () => (
@@ -11,6 +12,7 @@ export const App = () => (
             <Routes>
                 <Route path='/' element={<HomePage />} />
                 <Route path='/milkshake/:id' element={<DetailedMilkshakePage />} />
+                <Route path='/milkshake/:id/reviews' element={<ReviewsPage />} />
             </Routes>
         </div>
     </BrowserRouter>

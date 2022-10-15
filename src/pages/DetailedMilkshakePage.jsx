@@ -1,7 +1,7 @@
 import axios from "../axios"
 import { useState, useEffect } from "react"
 import { Link, useParams } from "react-router-dom"
-import { IoMdArrowRoundBack } from "react-icons/io"
+import { IoMdReturnLeft } from "react-icons/io"
 
 export const DetailedMilkshakePage = () => {
     const { id } = useParams()
@@ -22,7 +22,7 @@ export const DetailedMilkshakePage = () => {
     return (
         <section className="w-full h-full bg-orange-200 relative">
             <Link to="/" className="absolute top-1 left-[5%] ">
-                <IoMdArrowRoundBack className="text-xl text-orange-600" />
+                <IoMdReturnLeft className="text-xl text-orange-600" />
                 <p className="text-xs text-orange-600">Back</p>
             </Link>
             {selectedMilkshake && (
@@ -37,7 +37,7 @@ export const DetailedMilkshakePage = () => {
                         className="w-1/2 rounded-lg border-2 border-orange-400"
                     />
                     <p className="w-5/6 text-xs xs:text-sm text-justify">{selectedMilkshake.long_description}</p>
-                    <Link to="/" className="text-center text-xs xs:text-sm bg-orange-400 rounded px-2 py-1 mb-1">Read Reviews</Link>
+                    <Link to={`/milkshake/${id}/reviews`} className="text-center text-xs xs:text-sm bg-orange-400 rounded px-2 py-1 mb-1">Read Reviews</Link>
                 </div>
             )}
         </section>
