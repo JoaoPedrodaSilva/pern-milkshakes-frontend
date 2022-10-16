@@ -59,18 +59,22 @@ export const ReviewsPage = () => {
                         className="w-1/2 rounded-lg border-2 border-orange-400"
                     />
 
-                    {milkshakeReviews.length === 0 && (<p className="h-24 xs:h-28">NO REVIEWS YET</p>)}
+                    {milkshakeReviews.length === 0 && (
+                        <div className="w-1/2 flex flex-col justify-center items-center text-xs xs:text-sm p-3 rounded-lg bg-orange-300">
+                            <p>No reviews yet!</p>
+                        </div>
+                    )}
 
                     {milkshakeReviews && milkshakeReviews.map((review, index) => {
                         if (reviewIndex === index) {
                             return (
-                                <article key={index} className="h-24 xs:h-28 flex justify-center items-center">
+                                <article key={index} className="w-5/6 h-24 xs:h-28 flex justify-center items-center">
                                     <IoMdArrowDropleft
                                         onClick={prevReview}
                                         className="text-xl"
                                     />
 
-                                    <div className="w-4/5 flex h-full flex-col justify-start items-center gap-2 rounded-lg bg-orange-300">
+                                    <div className="w-full flex h-full flex-col justify-start items-center gap-2 pt-1 rounded-lg bg-orange-300">
                                         <h2 className="font-semi-bold text-xs xs:text-sm text-center font-bold">{review.reviewer_name}</h2>
                                         <p className="text-xs xs:text-sm px-5 text-justify">{review.reviewer_comment}</p>
                                     </div>
