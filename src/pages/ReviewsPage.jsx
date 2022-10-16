@@ -1,7 +1,9 @@
 import axios from "../axios"
 import { useState, useEffect } from "react"
-import { Link, useParams } from "react-router-dom"
-import { IoMdReturnLeft, IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io"
+import { useParams } from "react-router-dom"
+import { BackButton } from "../components/BackButton"
+import { MilkshakeHeader } from "../components/MilkshakeHeader"
+import { ReviewCard } from "../components/ReviewCard"
 
 export const ReviewsPage = () => {
     const { id } = useParams()
@@ -9,6 +11,7 @@ export const ReviewsPage = () => {
     const [milkshakeReviews, setMilkshakeReviews] = useState(null)
     const [reviewIndex, setReviewIndex] = useState(0)
 
+    //get selected milkshake from database
     useEffect(() => {
         const getSelectedMilkshake = async () => {
             try {
@@ -22,6 +25,7 @@ export const ReviewsPage = () => {
         getSelectedMilkshake()
     }, [])
 
+    //previous and next review functions
     const prevReview = () => {
         setReviewIndex(index => {
             if (index === 0) {
@@ -41,52 +45,37 @@ export const ReviewsPage = () => {
         })
     }
 
+
     return (
-        <section className="w-full h-full bg-orange-200 relative">
-            <Link to={`/milkshake/${id}`} className="absolute top-1 left-[5%] ">
-                <IoMdReturnLeft className="text-xl text-orange-600" />
-                <p className="text-xs text-orange-600">Back</p>
-            </Link>
+        <section className="w-full h-full flex flex-col justify-start bg-orange-200 relative">
+            <BackButton route={`/milkshake/${id}`} />
+            {selectedMilkshake && <MilkshakeHeader selectedMilkshake={selectedMilkshake} />}
+
             {selectedMilkshake && (
                 <div className="h-full flex flex-col justify-around items-center">
-                    <header className="flex flex-col text-sm xs:text-lg justify-center items-center">
-                        <h1 className="font-bold">{selectedMilkshake.title}</h1>
-                        <h2 className="font-semi-bold text-xs xs:text-sm">Flavor: {selectedMilkshake.flavor}</h2>
-                    </header>
-                    <img
-                        src={selectedMilkshake.image_url}
-                        alt=""
-                        className="w-1/2 rounded-lg border-2 border-orange-400"
-                    />
 
-                    {milkshakeReviews.length === 0 && (
+                    {/* render in case of no reviews */}
+                    {milkshakeReviews.length === 0 ? (
                         <div className="w-1/2 flex flex-col justify-center items-center text-xs xs:text-sm p-3 rounded-lg bg-orange-300">
                             <p>No reviews yet!</p>
                         </div>
+
+                        /* render in case of reviews */
+                    ) : (
+                        milkshakeReviews && milkshakeReviews.map((review, index) => {
+                            if (reviewIndex === index) {
+                                return (
+                                    <ReviewCard
+                                        key={index}
+                                        review={review}
+                                        index={index}
+                                        prevReview={prevReview}
+                                        nextReview={nextReview}
+                                    />
+                                )
+                            }
+                        })
                     )}
-
-                    {milkshakeReviews && milkshakeReviews.map((review, index) => {
-                        if (reviewIndex === index) {
-                            return (
-                                <article key={index} className="w-5/6 h-24 xs:h-28 flex justify-center items-center">
-                                    <IoMdArrowDropleft
-                                        onClick={prevReview}
-                                        className="text-xl"
-                                    />
-
-                                    <div className="w-full flex h-full flex-col justify-start items-center gap-2 pt-1 rounded-lg bg-orange-300">
-                                        <h2 className="font-semi-bold text-xs xs:text-sm text-center font-bold">{review.reviewer_name}</h2>
-                                        <p className="text-xs xs:text-sm px-5 text-justify">{review.reviewer_comment}</p>
-                                    </div>
-
-                                    <IoMdArrowDropright
-                                        onClick={nextReview}
-                                        className="text-xl"
-                                    />
-                                </article>
-                            )
-                        }
-                    })}
                 </div>
             )}
         </section>

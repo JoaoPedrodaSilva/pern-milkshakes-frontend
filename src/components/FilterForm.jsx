@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 
-export const Filter = ({ allMilkshakes, selectedFlavor, setSelectedFlavor, setFilteredMilkshakes }) => {
+export const FilterForm = ({ allMilkshakes, selectedFlavor, setSelectedFlavor, setFilteredMilkshakes }) => {
 
     useEffect(() => {
         if (selectedFlavor === "All") {
@@ -11,11 +11,11 @@ export const Filter = ({ allMilkshakes, selectedFlavor, setSelectedFlavor, setFi
     }, [selectedFlavor])
 
     return (
-        <form className="w-full flex justify-between text-xs xs:text-sm gap-1 pb-2">
-            <label htmlFor="filter">Select your flavor?</label>
+        <form className="w-full flex justify-end text-xs xs:text-sm gap-1 pb-2">
+            <label htmlFor="filter">Select your flavor:</label>
             <select
                 id="filter"
-                className="w-1/2 xs:w-3/5 pl-1 rounded"
+                className=" pl-1 rounded"
                 onChange={
                     event => setSelectedFlavor(event.target.value)
                 }

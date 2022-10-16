@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { RatingStars } from "./RatingStars";
 
 export const MilkshakeCard = ({ milkshake }) => (
     <article className="w-full min-h-[49%] flex gap-3 text-sm xs:text-lg rounded-lg shadow border border-white px-3 py-1 bg-orange-200 ">
@@ -9,14 +10,20 @@ export const MilkshakeCard = ({ milkshake }) => (
         />
 
         <div className="flex flex-col justify-evenly">
-                <h2 className="font-bold">{milkshake.title}</h2>
-                <p className="text-xs xs:text-sm">Flavor: {milkshake.flavor}</p>
-            
-            <p className="text-xs xs:text-sm text-justify">{milkshake.short_description}</p>
-            <Link to={`milkshake/${milkshake.id}`} className="w-2/3 text-sm xs:text-sm text-center bg-orange-400 rounded shadow-md">
+            <h2 className="font-bold">{milkshake.title}</h2>
+            <RatingStars
+                averageRating={milkshake.average_rating}
+                totalRatings={milkshake.total_ratings}
+                id={milkshake.id}
+            />
+            {/* <p className="text-xs xs:text-sm">Flavor: {milkshake.flavor}</p> */}
+
+            <p className="text-xs xs:text-sm">Description: {milkshake.short_description}</p>
+            <Link to={`milkshake/${milkshake.id}`} className="w-1/2 text-sm xs:text-sm text-center bg-orange-400 rounded shadow-md">
                 More
             </Link>
         </div>
     </article>
 )
+
 

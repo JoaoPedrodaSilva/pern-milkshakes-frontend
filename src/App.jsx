@@ -3,6 +3,7 @@ import { Navbar } from "./components/Navbar"
 import { HomePage } from "./pages/HomePage"
 import { DetailedMilkshakePage } from "./pages/DetailedMilkshakePage"
 import { ReviewsPage } from "./pages/ReviewsPage"
+import { FaqPage } from "./pages/FaqPage"
 
 
 export const App = () => (
@@ -13,6 +14,7 @@ export const App = () => (
                 <Route path='/' element={<HomePage />} />
                 <Route path='/milkshake/:id' element={<DetailedMilkshakePage />} />
                 <Route path='/milkshake/:id/reviews' element={<ReviewsPage />} />
+                <Route path='/faq/' element={<FaqPage />} />
             </Routes>
         </div>
     </BrowserRouter>

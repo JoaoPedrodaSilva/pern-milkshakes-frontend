@@ -1,7 +1,7 @@
 import axios from "../axios"
 import { useState, useEffect } from "react"
 import { MilkshakeCard } from "../components/MilkshakeCard"
-import { Filter } from "../components/Filter"
+import { FilterForm } from "../components/FilterForm"
 
 
 export const HomePage = () => {
@@ -22,10 +22,10 @@ export const HomePage = () => {
         }
         getAllMilkshakes()
     }, [])
-
+    
     return (
         <main className="w-full h-full flex flex-col justify-start items-center p-2">
-            <Filter
+            <FilterForm
                 allMilkshakes={allMilkshakes}
                 selectedFlavor={selectedFlavor}
                 setSelectedFlavor={setSelectedFlavor}
