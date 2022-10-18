@@ -4,6 +4,7 @@ import { HomePage } from "./pages/HomePage"
 import { DetailedMilkshakePage } from "./pages/DetailedMilkshakePage"
 import { ReviewsPage } from "./pages/ReviewsPage"
 import { FaqPage } from "./pages/FaqPage"
+import { ContactPage } from "./pages/ContactPage"
 
 
 export const App = () => (
@@ -15,6 +16,7 @@ export const App = () => (
                 <Route path='/milkshake/:id' element={<DetailedMilkshakePage />} />
                 <Route path='/milkshake/:id/reviews' element={<ReviewsPage />} />
                 <Route path='/faq/' element={<FaqPage />} />
+                <Route path='/contact/' element={<ContactPage />} />
             </Routes>
         </div>
     </BrowserRouter>

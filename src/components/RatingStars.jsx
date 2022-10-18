@@ -5,7 +5,7 @@ import { FaRegStar, FaStarHalfAlt, FaStar } from 'react-icons/fa'
 export const RatingStars = ({ averageRating, totalRatings, id, reviewerRating }) => {
     const stars = []
 
-    if (averageRating === null) {
+    if (reviewerRating) {
         for (let i = 1; i <= 5; i++) {
             if (i <= reviewerRating) {
                 stars.push(<FaStar key={i} className='text-orange-500' />)
@@ -31,30 +31,27 @@ export const RatingStars = ({ averageRating, totalRatings, id, reviewerRating })
     return (
         <Link to={`/milkshake/${id}/reviews`} className='flex items-center gap-1 text-xs text-orange-500'>
             {
-                averageRating === null ? (
+                reviewerRating ?
                     <>
                         <div className='flex'>
                             {stars}
                         </div>
                     </>
-                ) : (
-                    !totalRatings ? (
+                    :
+                    !totalRatings ?
                         <>
                             <div className='flex'>
                                 {stars}
                             </div>
                             <p>(0 reviews)</p>
                         </>
-                    ) : (
+                        :
                         <>
                             <div className='flex'>
                                 {stars}
                             </div>
                             <p>({totalRatings} reviews)</p>
                         </>
-                    )
-                )
-
             }
         </Link>
     )

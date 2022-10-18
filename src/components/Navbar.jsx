@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 
 export const Navbar = () => (
-    <nav className="w-full flex justify-around items-center text-xs xs:text-sm font-semi-bold border-b py-1 text-white border-white bg-orange-400">
+    <nav className="w-full flex justify-around items-center text-xs xs:text-sm font-semi-bold py-1 text-white bg-orange-400">
         <Link to="/" className="w-1/4">
             <img
                 src="https://pern-milkshakes.s3.sa-east-1.amazonaws.com/logo.png"
@@ -11,6 +11,6 @@ export const Navbar = () => (
         </Link>
         <Link to="/">Flavors</Link>
         <Link to="/faq">FAQ</Link>
-        <Link to="/">Contact</Link>
+        <Link to="/contact">Contact</Link>
     </nav>
 )
