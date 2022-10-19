@@ -41,11 +41,11 @@ export const FaqCard = ({ id, allQuestions, setAllQuestions }) => {
                                 </p>
                                 {question.isOpen ? (
                                     <AiOutlineMinusCircle
-                                        className="text-lg"
+                                        className="text-lg cursor-pointer"
                                     />
                                 ) : (
                                     <AiOutlinePlusCircle
-                                        className="text-lg"
+                                        className="text-lg cursor-pointer"
                                     />
                                 )}
                             </div>

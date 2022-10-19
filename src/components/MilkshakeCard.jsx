@@ -19,7 +19,7 @@ export const MilkshakeCard = ({ milkshake }) => (
             {/* <p className="text-xs xs:text-sm">Flavor: {milkshake.flavor}</p> */}
 
             <p className="text-xs xs:text-sm">Description: {milkshake.short_description}</p>
-            <Link to={`milkshake/${milkshake.id}`} className="w-1/2 text-sm xs:text-sm text-center bg-orange-400 rounded shadow-md">
+            <Link to={`milkshake/${milkshake.id}`} className="w-1/2 text-sm xs:text-sm text-center bg-orange-400 rounded shadow-md hover:bg-orange-500 hover:text-white">
                 More
             </Link>
         </div>

@@ -1,12 +1,13 @@
-export const ContactForm = ({ name, setName, email, setEmail, message, setMessage }) => {
+export const ContactForm = ({ name, setName, email, setEmail, message, setMessage, setModalOpen }) => {
     const handleSubmit = event => {
         event.preventDefault()
+        setModalOpen(true)
     }
 
     return (
         <form
             onSubmit={handleSubmit}
-            className="flex flex-col gap-5 p-5 text-xs xs:text-sm"
+            className="w-2/3 h-full flex flex-col gap-2 xs:gap-5 text-xs xs:text-sm"
         >
             <div className="flex gap-2">
                 <label htmlFor="name">Name: </label>
@@ -16,6 +17,7 @@ export const ContactForm = ({ name, setName, email, setEmail, message, setMessag
                     onChange={event => setName(event.target.value)}
                     maxLength={20}
                     required
+                    className="px-1 rounded w-full"
                 />
             </div>
 
@@ -27,6 +29,7 @@ export const ContactForm = ({ name, setName, email, setEmail, message, setMessag
                     onChange={event => setEmail(event.target.value)}
                     maxLength={30}
                     required
+                    className="px-1 rounded w-full"
                 />
             </div>
 
@@ -36,15 +39,16 @@ export const ContactForm = ({ name, setName, email, setEmail, message, setMessag
                     name="message"
                     id="message"
                     cols="30"
-                    rows="10"
+                    rows="5"
                     value={message}
                     onChange={event => setMessage(event.target.value)}
                     maxLength={255}
                     required
+                    className="px-1 rounded w-full resize-none"
                 />
             </div>
 
-            <button type="submit" className="">
+            <button type="submit" className="w-1/2 rounded-lg p-1 bg-orange-400 hover:bg-orange-500 hover:text-white">
                 Send Message
             </button>
         </form>

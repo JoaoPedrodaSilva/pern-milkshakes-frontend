@@ -6,11 +6,23 @@ export const Navbar = () => (
             <img
                 src="https://pern-milkshakes.s3.sa-east-1.amazonaws.com/logo.png"
                 alt=""
-                className="rounded-full"
+                className="rounded-full hover:scale-110"
             />
         </Link>
-        <Link to="/">Flavors</Link>
-        <Link to="/faq">FAQ</Link>
-        <Link to="/contact">Contact</Link>
+
+        <Link
+            className="hover:scale-125"
+            to="/"
+        >Flavors</Link>
+
+        <Link
+            to="/faq"
+            className="hover:scale-125"
+        >FAQ</Link>
+
+        <Link
+            to="/contact"
+            className="hover:scale-125"
+        >Contact</Link>
     </nav>
 )

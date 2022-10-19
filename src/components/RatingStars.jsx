@@ -29,7 +29,7 @@ export const RatingStars = ({ averageRating, totalRatings, id, reviewerRating })
 
 
     return (
-        <Link to={`/milkshake/${id}/reviews`} className='flex items-center gap-1 text-xs text-orange-500'>
+        <Link to={`/milkshake/${id}/reviews`} className='flex items-center gap-1 text-xs text-orange-500 hover:underline'>
             {
                 reviewerRating ?
                     <>

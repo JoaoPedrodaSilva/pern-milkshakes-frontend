@@ -31,7 +31,7 @@ export const DetailedMilkshakePage = () => {
             {selectedMilkshake && (
                 <div className="flex flex-col justify-around items-center gap-2">
                     <p className="w-5/6 text-xs xs:text-sm text-justify">{selectedMilkshake.long_description}</p>
-                    <Link to={`/milkshake/${id}/reviews`} className="text-center text-xs xs:text-sm bg-orange-400 rounded px-2 py-1 mb-1">
+                    <Link to={`/milkshake/${id}/reviews`} className="text-center text-xs xs:text-sm bg-orange-400 rounded px-2 py-1 mb-1 hover:bg-orange-500 hover:text-white">
                         Read Reviews
                     </Link>
                 </div>
