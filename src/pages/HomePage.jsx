@@ -7,7 +7,7 @@ import { FilterForm } from "../components/FilterForm"
 export const HomePage = () => {
     const [allMilkshakes, setAllMilkshakes] = useState(null)
     const [filteredMilkshakes, setFilteredMilkshakes] = useState(null)
-    const [selectedFlavor, setSelectedFlavor] = useState(null)
+    const [selectedFlavor, setSelectedFlavor] = useState("All")
 
     //get all milkshakes from database
     useEffect(() => {
@@ -22,7 +22,18 @@ export const HomePage = () => {
         }
         getAllMilkshakes()
     }, [])
-    
+
+
+    //render in case of no data
+    if (!allMilkshakes) {
+        return (
+            <div className="flex flex-col justify-center items-center gap-3 pt-40">
+                <p className="text-white text-center">Loading...</p>
+                <img className="w-2/12 sm:w-1/12 rounded-lg" src="https://financas-e-fundamentos.s3.sa-east-1.amazonaws.com/loading.gif" alt="An animation, showing the chart is being loaded." />
+            </div>
+        )
+    }
+
     return (
         <main className="w-full h-full flex flex-col justify-start items-center p-2">
             <FilterForm

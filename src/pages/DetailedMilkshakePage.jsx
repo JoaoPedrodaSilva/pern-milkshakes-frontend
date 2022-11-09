@@ -22,6 +22,17 @@ export const DetailedMilkshakePage = () => {
     }, [])
 
 
+    //render in case of no data
+    if (!selectedMilkshake) {
+        return (
+            <div className="flex flex-col justify-center items-center gap-3 pt-40">
+                <p className="text-white text-center">Loading...</p>
+                <img className="w-2/12 sm:w-1/12 rounded-lg" src="https://financas-e-fundamentos.s3.sa-east-1.amazonaws.com/loading.gif" alt="An animation, showing the chart is being loaded." />
+            </div>
+        )
+    }
+
+
     return (
         <section className="w-full h-full flex flex-col justify-start bg-orange-200 relative">
             <BackButton route={"/"} />
