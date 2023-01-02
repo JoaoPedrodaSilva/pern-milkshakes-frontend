@@ -29,7 +29,7 @@ export const FaqCard = ({ id, allQuestions, setAllQuestions }) => {
             {allQuestions.map(question => {
                 if (question.id === id) {
                     return (
-                        <article key={question.id} className="flex flex-col gap-2 text-xs xs:text-sm bg-orange-200 rounded-md p-2">
+                        <article key={question.id} className="flex flex-col gap-2 text-xs xs:text-lg bg-orange-200 rounded-md p-2">
 
                             {/* question and plus/minus button */}
                             <div

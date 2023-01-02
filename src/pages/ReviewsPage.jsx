@@ -67,7 +67,7 @@ export const ReviewsPage = () => {
 
                     {/* render in case of no reviews */}
                     {milkshakeReviews.length === 0 ? (
-                        <div className="w-1/2 flex flex-col justify-center items-center text-xs xs:text-sm p-3 rounded-lg bg-orange-300">
+                        <div className="w-1/2 flex flex-col justify-center items-center text-xs xs:text-base p-3 rounded-lg bg-orange-300">
                             <p>No reviews yet!</p>
                         </div>
 

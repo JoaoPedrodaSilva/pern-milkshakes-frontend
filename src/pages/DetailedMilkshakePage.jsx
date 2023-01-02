@@ -34,15 +34,15 @@ export const DetailedMilkshakePage = () => {
 
 
     return (
-        <section className="w-full h-full flex flex-col justify-start bg-orange-200 relative">
+        <section className="w-full h-full flex flex-col gap-7 xs:gap-8 justify-start bg-orange-200 relative">
             <BackButton route={"/"} />
             {selectedMilkshake && <MilkshakeHeader selectedMilkshake={selectedMilkshake} />}            
 
             {/* milkshake long description and read reviews button */}
             {selectedMilkshake && (
-                <div className="flex flex-col justify-around items-center gap-2">
-                    <p className="w-5/6 text-xs xs:text-sm text-justify">{selectedMilkshake.long_description}</p>
-                    <Link to={`/milkshake/${id}/reviews`} className="text-center text-xs xs:text-sm bg-orange-400 rounded px-2 py-1 mb-1 hover:bg-orange-500 hover:text-white">
+                <div className="flex flex-col justify-around items-center gap-4 xs:gap-8">
+                    <p className="w-5/6 text-xs xs:text-base text-justify">{selectedMilkshake.long_description}</p>
+                    <Link to={`/milkshake/${id}/reviews`} className="text-center text-xs xs:text-base bg-orange-400 rounded px-2 py-1 mb-1 hover:bg-orange-500 hover:text-white">
                         Read Reviews
                     </Link>
                 </div>

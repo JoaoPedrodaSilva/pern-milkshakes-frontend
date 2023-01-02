@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { RatingStars } from "./RatingStars";
 
 export const MilkshakeCard = ({ milkshake }) => (
-    <article className="w-full min-h-[49%] flex gap-3 text-sm xs:text-lg rounded-lg shadow border border-white px-3 py-1 bg-orange-200 ">
+    <article className="w-full min-h-[40%] flex gap-3 text-sm xs:text-lg rounded-lg shadow border border-white px-3 py-1 bg-orange-200 ">
         <img
             src={milkshake.image_url}
             alt={`the ${milkshake.title} milkshake`}

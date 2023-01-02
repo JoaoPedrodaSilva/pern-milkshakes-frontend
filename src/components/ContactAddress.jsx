@@ -5,8 +5,8 @@ export const ContactAddress = () => (
         <div className='flex items-center gap-1'>
             <FaMapMarkerAlt />
             <div className='flex flex-col'>
-                <h4>Fast Food Project</h4>
-                <p>Somewhere, CA</p>
+                <h4>Milkshake Project</h4>
+                <p>Somewhere, SW</p>
             </div>
         </div>
 

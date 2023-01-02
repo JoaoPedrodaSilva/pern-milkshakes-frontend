@@ -7,7 +7,7 @@ export const ContactForm = ({ name, setName, email, setEmail, message, setMessag
     return (
         <form
             onSubmit={handleSubmit}
-            className="w-2/3 h-full flex flex-col gap-2 xs:gap-5 text-xs xs:text-sm"
+            className="w-2/3 h-full flex flex-col gap-4 text-xs xs:text-lg"
         >
             <div className="flex gap-2">
                 <label htmlFor="name">Name: </label>

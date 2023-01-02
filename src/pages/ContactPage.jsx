@@ -10,7 +10,7 @@ export const ContactPage = () => {
     const [modalOpen, setModalOpen] = useState(false)
 
     return (
-        <section className="w-full h-full flex flex-col justify-start items-center gap-2 px-2 py-8">
+        <section className="w-full h-full flex flex-col justify-start items-center gap-5 xs:gap-8 px-2 py-8">
             <div className="w-full flex justify-around items-center gap-3 xs:gap-5">
                 <ContactForm
                     name={name}

@@ -45,7 +45,7 @@ export const HomePage = () => {
 
 
             {/* render a card for each milkshake */}
-            <section className="w-full h-[81%] flex flex-col gap-1 overflow-auto overflow-x-hidden scrollbar rounded-lg">
+            <section className="w-full h-[85%] flex flex-col gap-1 overflow-auto overflow-x-hidden scrollbar rounded-lg">
                 {filteredMilkshakes && filteredMilkshakes.map(milkshake => (
                     <MilkshakeCard key={milkshake.id} milkshake={milkshake} />
                 ))}
