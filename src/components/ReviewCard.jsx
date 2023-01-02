@@ -13,7 +13,7 @@ export const ReviewCard = ({ review, index, prevReview, nextReview }) => (
                 <h2 className="font-semi-bold text-xs xs:text-base font-bold">{review.reviewer_name}</h2>
                 <RatingStars averageRating={null} reviewerRating={review.reviewer_rating} />
             </div>
-            <p className="text-xs xs:text-base text-justify px-5 overflow-auto scrollbar overflow-x-hidden">{review.reviewer_comment}</p>
+            <p className="text-xs xs:text-base text-justify px-5 overflow-hidden">{review.reviewer_comment}</p>
         </div>
 
         <IoMdArrowDropright
