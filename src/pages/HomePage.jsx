@@ -13,14 +13,14 @@ export const HomePage = () => {
     useEffect(() => {
         const getAllMilkshakes = async () => {
             try {
-                const response = await axios.get('/api/')
+                const response = await axios.get('/api/')                
                 setAllMilkshakes(response.data.milkshakes)
-                setFilteredMilkshakes(response.data.milkshakes)
-            } catch (error) {
+                setFilteredMilkshakes(response.data.milkshakes)                
+            } catch (error) {                
                 console.log(error)
             }
         }
-        getAllMilkshakes()
+        getAllMilkshakes()        
     }, [])
 
 
